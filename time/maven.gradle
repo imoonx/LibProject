@@ -1,0 +1,44 @@
+apply plugin: 'maven'
+
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    destinationDir = file("javadoc/")
+    options.encoding = "utf-8"
+    options.charSet = "utf-8"
+    failOnError false
+}
+
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+    destinationDir = file("javajar/")
+}
+
+artifacts {
+    archives androidSourcesJar
+    archives androidJavadocsJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            def mavenDirPath = file(getProperty('maven.url'))
+            repository(url: "file://${mavenDirPath.absolutePath}")
+            pom.project {
+                artifactId 'time'
+                groupId 'com.imoonx.android'
+                version android_libImoonxVersion
+                packaging 'aar'
+            }
+        }
+    }
+}
+
+
+

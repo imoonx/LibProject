@@ -1,0 +1,7 @@
+二维码、条形码扫描
+com.cssi.common.zbar.ZBarView
+混淆时添加
+-keep class net.sourceforge.zbar.** {*;}
+
+
+

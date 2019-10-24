@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">app</string>
+    <string name="input_no">请输入卡号后四位</string>
+    <string name="qurey">查询</string>
+    <string name="date">日期</string>
+    <string name="id">流水号</string>
+    <string name="gun_no">枪号</string>
+    <string name="volume">加油量</string>
+    <string name="price">价格</string>
+    <string name="amount">金额</string>
+    <string name="refuel_time">加油时间</string>
+    <string name="btn_bind">进行绑定</string>
+    <string name="car_sign">车架号:</string>
+    <string name="order_no">加油记录号:</string>
+    <string name="bar_text">将条码放入框内,即可自动扫描</string>
+    <string name="qrcode_text">二维码/条码(轻触打开闪光灯)</string>
+    <string name="scan_qrcode">扫二维码</string>
+    <string name="scan_barcode">扫条码</string>
+    <string name="open_flashlight">打开闪光灯</string>
+    <string name="close_flashlight">关闭闪光灯</string>
+    <string name="app_down_loading">努力加载中。。。</string>
+    <string name="hint_username">请输入员工号</string>
+    <string name="hint_password_login">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="setting">设置</string>
+    <string name="db_ip">请输入数据库IP</string>
+    <string name="db_name">请输入数据库名</string>
+    <string name="db_user">请输入数据库用户名</string>
+    <string name="db_pwd">请输入数据库登录密码</string>
+    <string name="pos_no">请输入设备编号</string>
+    <string name="db_login">确认</string>
+    <string name="main">记录查询</string>
+    <string name="scan">扫码匹配</string>
+</resources>

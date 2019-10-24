@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <Button
+        android:id="@+id/btnCancel"
+        style="@style/time_wave_bg_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:padding="5dp"
+        android:text="@string/time_cancel"
+        android:textColor="#666"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="#666"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        style="@style/time_wave_bg_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:padding="5dp"
+        android:text="@string/time_ok"
+        android:textColor="#666"
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion android_compileSdkVersion
+    buildToolsVersion android_buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion android_minSdkVersion
+        targetSdkVersion android_targetSdkVersion
+        versionCode android_versionCode
+        versionName android_versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi-v7a', 'x86'
+//            abiFilters 'armeabi-v7a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64', 'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+        release {
+            //混淆
+            minifyEnabled true
+            //对齐
+            zipAlignEnabled true
+
+            //移除无用的resource 文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+//    implementation "com.android.support:appcompat-v7:$android_libSdkVersion"
+//    implementation "com.android.support:design:$android_libSdkVersion"
+//    implementation "com.android.support:support-v4:$android_libSdkVersion"
+//    implementation 'com.android.lib:http:1.0.0@aar'
+//    implementation 'com.android.lib:zbar:1.0.0@aar'
+//    implementation 'com.android.lib:image:1.0.0@aar'
+//    implementation 'com.android.lib:time:1.0.0@aar'
+//    implementation 'com.android.lib:file:1.0.0@aar'
+    //    implementation 'com.android.lib:pdf:1.0.0@aar'
+//    implementation project(':pdf')
+    implementation project(':common')
+}

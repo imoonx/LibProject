@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/toolbar"
+    android:orientation="vertical">
+
+    <com.imoonx.common.ui.EmptyLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lay_button"
+        android:layout_weight="1"
+        android:padding="1dp"
+        android:scrollbars="none" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/white40" />
+
+    <FrameLayout
+        android:id="@+id/lay_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:paddingBottom="@dimen/space_16"
+        android:paddingLeft="@dimen/space_16"
+        android:paddingRight="@dimen/space_16"
+        android:paddingTop="@dimen/space_16">
+
+        <Button
+            android:id="@+id/btn_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_28"
+            android:layout_gravity="left"
+            android:background="@drawable/image_btn_select_preview_bg_selector"
+            android:enabled="false"
+            android:gravity="center"
+            android:paddingBottom="@dimen/space_4"
+            android:paddingLeft="@dimen/space_12"
+            android:paddingRight="@dimen/space_12"
+            android:paddingTop="@dimen/space_4"
+            android:text="@string/image_select_opt_preview"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_14" />
+
+        <Button
+            android:id="@+id/btn_done"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_28"
+            android:layout_gravity="right"
+            android:background="@drawable/image_btn_select_done_bg_selector"
+            android:enabled="false"
+            android:gravity="center"
+            android:paddingBottom="@dimen/space_4"
+            android:paddingLeft="@dimen/space_12"
+            android:paddingRight="@dimen/space_12"
+            android:paddingTop="@dimen/space_4"
+            android:text="@string/image_select_opt_done"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_14" />
+    </FrameLayout>
+
+</LinearLayout>

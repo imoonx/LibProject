@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.imoonx.image.ui.SquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/space_4">
+
+    <ImageView
+        android:id="@+id/iv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#dadada"
+        android:clickable="true"
+        android:contentDescription="@string/default_title_desc" />
+
+    <ImageView
+        android:id="@+id/iv_is_gif"
+        android:layout_width="@dimen/space_30"
+        android:layout_height="@dimen/space_18"
+        android:layout_gravity="right|bottom"
+        android:contentDescription="@string/default_title_desc"
+        android:padding="@dimen/space_2"
+        android:scaleType="centerInside"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="@dimen/space_24"
+        android:layout_height="@dimen/space_24"
+        android:layout_gravity="right|top"
+        android:background="@drawable/image_ic_delete"
+        android:contentDescription="@string/default_title_desc"
+        android:paddingBottom="@dimen/space_4"
+        android:paddingLeft="@dimen/space_4"
+        android:scaleType="fitXY" />
+
+</com.imoonx.image.ui.SquareLayout>

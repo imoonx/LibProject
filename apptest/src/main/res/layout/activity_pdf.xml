@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/viewstub"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/page"-->
+        <!--android:layout_width="@dimen/space_50"-->
+        <!--android:layout_height="@dimen/space_30"-->
+        <!--android:layout_gravity="right"-->
+        <!--android:background="@color/red_800"-->
+        <!--android:gravity="center"-->
+        <!--android:textColor="#333"-->
+        <!--android:textSize="@dimen/text_size_16" />-->
+
+</FrameLayout>

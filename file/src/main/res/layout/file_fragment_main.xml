@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/window_background"
+        android:divider="@drawable/linearlayout_driver"
+        android:elevation="@dimen/space_2"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <!-- 手机内存 -->
+        <TextView
+            android:id="@+id/tv_mobile_memory"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_45"
+            android:background="@drawable/driver_plan_bg_white"
+            android:drawableLeft="@mipmap/file_ram_icon"
+            android:drawablePadding="@dimen/space_10"
+            android:drawableRight="@mipmap/file_arrow_right"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/android_default_padding"
+            android:paddingRight="@dimen/android_default_padding"
+            android:text="@string/tv_mobile_memory"
+            android:textColor="@color/md_grey_900"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tv_sd_card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_45"
+            android:background="@drawable/driver_plan_bg_white"
+            android:drawableLeft="@mipmap/file_sd_card_icon"
+            android:drawablePadding="@dimen/space_10"
+            android:drawableRight="@mipmap/file_arrow_right"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/android_default_padding"
+            android:paddingRight="@dimen/android_default_padding"
+            android:text="@string/tv_sd_card"
+            android:textColor="@color/md_grey_900"
+            android:textSize="@dimen/text_size_16" />
+
+        <TextView
+            android:id="@+id/tv_extended_memory"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_45"
+            android:background="@drawable/driver_plan_bg_white"
+            android:drawableLeft="@mipmap/file_sd_card_icon"
+            android:drawablePadding="@dimen/space_10"
+            android:drawableRight="@mipmap/file_arrow_right"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/android_default_padding"
+            android:paddingRight="@dimen/android_default_padding"
+            android:text="@string/tv_extended_memory"
+            android:textColor="@color/md_grey_900"
+            android:textSize="@dimen/text_size_16" />
+    </LinearLayout>
+
+    <include
+        layout="@layout/file_select_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_45"
+        android:layout_gravity="bottom" />
+</FrameLayout>

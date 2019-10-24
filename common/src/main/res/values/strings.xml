@@ -1,0 +1,40 @@
+<resources>
+    <string name="default_title_desc">Android</string>
+    <string name="is_ok">确定</string>
+    <string name="is_cancel">取消</string>
+    <string name="date_is_loading">@string/error_view_loading</string>
+    <!--emptylayout-->
+    <string name="error_view_loading">数据加载中…</string>
+    <string name="error_view_click_to_refresh">点击屏幕,重新加载</string>
+    <string name="error_view_no_data">暂无内容</string>
+    <string name="error_view_load_error_click_to_refresh">内容加载失败\n点击重新加载</string>
+    <string name="error_view_network_error_click_to_refresh">没有可用的网络</string>
+    <!-- footer -->
+    <string name="footer_type_loading">正在加载中…</string>
+    <string name="footer_type_error">加载失败</string>
+    <string name="footer_type_net_error">网络错误</string>
+    <string name="footer_type_net_service">服务器异常</string>
+    <string name="footer_type_not_more">没有更多数据</string>
+    <string name="footer_type_more">加载更多</string>
+
+    <!--behavior-->
+    <string name="bye_burger_bottom_behavior">com.cssi.wholesale.library.behavior.ByeBurgerBottomBehavior</string>
+    <string name="bye_burger_bottom_title">com.cssi.wholesale.library.behavior.ByeBurgerTitleBehavior</string>
+    <string name="input_key_word">请输入关键字</string>
+    <string name="ready_down">准备下载</string>
+    <string name="app_name_desc">android</string>
+
+    <string-array name="text_size_name">
+        <item>超大号字体</item>
+        <item>大号字体</item>
+        <item>正常字体</item>
+        <item>小号字体</item>
+        <item>超小号字体</item>
+    </string-array>
+
+    <string name="web_set_text_size">字体设置</string>
+
+    <string name="webview_ziti">字体</string>
+    <string name="webview_share">分享</string>
+
+</resources>

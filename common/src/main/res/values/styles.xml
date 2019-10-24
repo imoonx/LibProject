@@ -1,0 +1,104 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- action bar -->
+        <item name="actionBarStyle">@style/App.Widget.ActionBar</item>
+        <!-- window style -->
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="actionOverflowMenuStyle">@style/menu_style</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:actionMenuTextAppearance">@style/MenuTextStyle</item>
+    </style>
+
+    <style name="MenuTextStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+    </style>
+
+    <!-- menu style -->
+    <style name="menu_style" parent="@style/Widget.AppCompat.Light.PopupMenu.Overflow">
+        <!-- 可以看到该属性 overlap：重叠 Anchor：描 -->
+        <item name="overlapAnchor">false</item>
+        <!-- 这个就是背景颜色了 -->
+        <item name="android:popupBackground">#68bdf0</item>
+    </style>
+
+    <!-- tablayout -->
+    <style name="tab_layout_text_style" parent="TextAppearance.AppCompat.Large.Inverse">
+        <item name="android:textSize">@dimen/text_size_15</item>
+    </style>
+
+    <!-- action bar -->
+    <style name="App.Widget.ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+    </style>
+
+    <!--dialog_waiting-->
+    <style name="dialog_waiting" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">@drawable/transparent_bg</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <!-- 全屏 -->
+    <style name="Theme.FullScreen" parent="@style/AppTheme.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTranslucentStatus">false</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- video -->
+    <style name="style_dialog_progress" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/popup_toast_anim</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="popup_toast_anim" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+    <!--背景-->
+    <style name="wave_bg_style" />
+    <!--前景-->
+    <style name="wave_fg_style" />
+
+    <style name="bg_wave_ripple_white">
+        <item name="android:background">@drawable/driver_plan_bg_white</item>
+    </style>
+
+    <style name="bg_wave_ripple_white_radius">
+        <item name="android:background">@drawable/driver_plan_bg_white_radius</item>
+    </style>
+
+    <style name="bg_wave_ripple_grey">
+        <item name="android:background">@drawable/driver_plan_bg_grey</item>
+    </style>
+
+    <style name="bg_wave_ripple_grey_radius">
+        <item name="android:background">@drawable/driver_plan_bg_grey</item>
+    </style>
+
+    <style name="popwindow_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/input_animation</item>
+        <item name="android:windowExitAnimation">@anim/out_animation</item>
+    </style>
+
+</resources>

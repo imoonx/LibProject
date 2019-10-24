@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<item android:drawable="@drawable/bg_white" android:state_selected="false" />
+    <item android:drawable="@drawable/bg_gray" android:state_selected="true" />
+    <item android:drawable="@drawable/bg_gray" android:state_checkable="true" />
+    <item android:drawable="@drawable/bg_white" android:state_checkable="false" />-->
+    <!--条目 背景颜色变化-->
+    <item android:drawable="@drawable/bg_white" android:state_pressed="false"></item>
+    <item android:drawable="@drawable/bg_gray" android:state_pressed="true"></item>
+    <item android:drawable="@drawable/bg_white" />
+</selector>

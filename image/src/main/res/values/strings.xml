@@ -1,0 +1,5 @@
+<resources>
+    <string name="image_select_opt_preview">预览</string>
+    <string name="image_select_opt_done">完成</string>
+    <string name="image_select">图片选择</string>
+</resources>

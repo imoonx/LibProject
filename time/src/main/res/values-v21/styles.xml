@@ -1,0 +1,6 @@
+<resources>
+    <!--背景-->
+    <style name="time_wave_bg_style">
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+</resources>

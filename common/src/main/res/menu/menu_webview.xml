@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/webview_ziti"
+        android:icon="@mipmap/ziti"
+        android:title="@string/webview_ziti"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/webview_share"
+        android:icon="@mipmap/share"
+        android:title="@string/webview_share"
+        app:showAsAction="always" />
+</menu>

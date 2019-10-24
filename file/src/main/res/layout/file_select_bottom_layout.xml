@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/space_45"
+    android:background="#e6e5e5"
+    android:elevation="@dimen/space_2"
+    android:paddingLeft="@dimen/android_default_padding"
+    android:paddingRight="@dimen/android_default_padding"
+    tools:showIn="@layout/file_activity_sdcard">
+
+    <TextView
+        android:id="@+id/tv_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/file_shape_bt_send"
+        android:padding="5dp"
+        android:text="预览"
+        android:textColor="@color/md_grey_700"
+        android:textSize="@dimen/text_size_13"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_all_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/tv_preview"
+        android:layout_toRightOf="@+id/tv_preview"
+        android:text="@string/size"
+        android:textColor="@color/md_blue_grey_600"
+        android:textSize="@dimen/text_size_13" />
+
+    <TextView
+        android:id="@+id/tv_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/file_shape_bt_send"
+        android:enabled="false"
+        android:padding="5dp"
+        android:text="@string/send"
+        android:textColor="@color/md_grey_700"
+        android:textSize="@dimen/text_size_13" />
+</RelativeLayout>

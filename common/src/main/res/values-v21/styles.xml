@@ -1,0 +1,27 @@
+<resources>
+    <!--背景-->
+    <style name="wave_bg_style">
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+    <!--前景-->
+    <style name="wave_fg_style">
+        <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="bg_wave_ripple_white">
+        <item name="android:background">@drawable/driver_plan_bg_white</item>
+    </style>
+
+    <style name="bg_wave_ripple_white_radius">
+        <item name="android:background">@drawable/driver_plan_bg_white_radius</item>
+    </style>
+
+    <style name="bg_wave_ripple_grey">
+        <item name="android:background">@drawable/driver_plan_bg_grey</item>
+    </style>
+
+    <style name="bg_wave_ripple_grey_radius">
+        <item name="android:background">@drawable/driver_plan_bg_grey</item>
+    </style>
+
+</resources>

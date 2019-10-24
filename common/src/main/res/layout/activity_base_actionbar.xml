@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appbar_layout"
+    style="@style/AppTheme.AppBarOverlay"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:showIn="@layout/activity_base">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="@dimen/space_1"
+        android:stateListAnimator="@null"
+        app:navigationIcon="@mipmap/ic_back"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/default_title_desc"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_17" />
+
+        <LinearLayout
+            android:id="@+id/toolbar_edittext_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/toolbar_edittext"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_30"
+                android:layout_weight="1"
+                android:hint="@string/input_key_word"
+                android:padding="@dimen/space_5"
+                android:singleLine="true"
+                android:textColor="#999"
+                android:textColorHint="#999"
+                android:textSize="@dimen/text_size_14" />
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+</android.support.design.widget.AppBarLayout>
+
+        

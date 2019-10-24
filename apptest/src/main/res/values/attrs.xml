@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--配置指示器的属性-->
+    <declare-styleable name="XIndicator">
+
+        <attr name="indicatorColor" format="color" /><!-- 未选中的指示器的颜色 -->
+        <attr name="selectedIndicatorColor" format="color" /><!-- 选中的指示器颜色 -->
+        <!--指示器的宽和高-->
+        <attr name="indicatorWidth" format="dimension" />
+        <attr name="indicatorHeight" format="dimension" />
+        <!--横向的间距-->
+        <attr name="indicatorSpace" format="dimension" />
+        <!--选中的指示器的宽高-->
+        <attr name="selectedIndicatorWidth" format="dimension" />
+        <attr name="selectedIndicatorHeight" format="dimension" />
+        <!--下标和个数-->
+        <attr name="index" format="integer" />
+        <attr name="count" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomerSeekBar">
+        <!--刻度数量-->
+        <attr name="seek_bar_tick_count" format="integer" />
+        <!--竖直刻度高度-->
+        <attr name="seek_bar_vertical_heignt" format="dimension" />
+        <!--水平刻度线的宽度-->
+        <attr name="seek_bar_horizontal_heignt" format="dimension" />
+        <!--刻度线颜色-->
+        <attr name="seek_bar_color" format="color" />
+        <!--描述文字的颜色-->
+        <attr name="seek_bar_text_color" format="color" />
+        <!--描述文字的padding-->
+        <attr name="seek_bar_text_padding" format="dimension" />
+        <!--拖动圆的半径-->
+        <attr name="seek_bar_radius" format="dimension" />
+        <!--拖动圆正常时的颜色-->
+        <attr name="seek_bar_normal_color" format="color" />
+        <!--拖动圆拖动时的颜色-->
+        <attr name="seek_bar_pressed_color" format="color" />
+        <!--默认选中-->
+        <attr name="seek_bar_current_index" format="integer" />
+        <!--是否需要动画s-->
+        <attr name="seek_bar_is_animation" format="boolean" />
+    </declare-styleable>
+
+
+</resources>

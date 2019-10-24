@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/showtoast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="showToast" />
+
+    <!--<FrameLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center_horizontal">-->
+
+    <!--<com.example.apptest.MenuViewItem-->
+    <!--android:id="@+id/west"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:background="@drawable/west_bg" />-->
+
+    <!--<com.example.apptest.MenuViewItem-->
+    <!--android:id="@+id/east"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:background="@drawable/east_bg" />-->
+
+    <!--<com.example.apptest.MenuViewItem-->
+    <!--android:id="@+id/south"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:background="@drawable/south_bg" />-->
+
+    <!--<com.example.apptest.MenuViewItem-->
+    <!--android:id="@+id/north"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:background="@drawable/north_bg" />-->
+
+    <!--<com.example.apptest.MenuViewItem-->
+    <!--android:id="@+id/middle"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:background="@drawable/middle_bg" />-->
+
+    <!--<com.example.apptest.MenuViewItem-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:background="@mipmap/henan" />-->
+    <!--</FrameLayout>-->
+
+</LinearLayout>

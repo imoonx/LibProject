@@ -1,0 +1,57 @@
+apply plugin: 'maven'
+
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    destinationDir = file("javadoc/")
+    options.encoding = "utf-8"
+    options.charSet = "utf-8"
+    failOnError false
+}
+
+task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+    destinationDir = file("javajar/")
+}
+
+artifacts {
+    archives androidSourcesJar
+    archives androidJavadocsJar
+}
+
+uploadArchives {
+//    repositories {
+//        mavenDeployer {
+////            repository(url: "http://10.1.2.204:8081/nexus/content/repositories/android_lib/") {
+//            repository(url: "http://10.1.2.180:8086/nexus/content/repositories/Android/") {
+//                authentication(userName: "admin", password: "admin123")
+//            }
+//
+//            pom.project {
+//                artifactId 'third'
+//                groupId 'com.android.lib'
+//                version android_versionName
+//                packaging 'aar'
+//            }
+//        }
+//    }
+    repositories {
+        mavenDeployer {
+            def mavenDirPath = file(getProperty('maven.url'))
+            repository(url: "file://${mavenDirPath.absolutePath}")
+            pom.project {
+                artifactId 'third'
+                groupId 'com.imoonx.android'
+                version android_libImoonxVersion
+                packaging 'aar'
+            }
+        }
+    }
+}
+

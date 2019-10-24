@@ -1,0 +1,41 @@
+UI抽取类
+依赖
+com.android.support:appcompat-v7
+
+com.android.support:design
+
+com.android.support:support-v4
+
+gson-2.2.1.jar
+
+app_http_release-1.0.arr
+
+okhttp-3.3.1
+
+okio-1.8.0
+
+glide-3.6.1
+
+glide加载https在AndroidManifest中配置
+<meta-data
+    android:name="com.cssi.common.http.glide.OkHttpGlideModule"
+    android:value="GlideModule" />
+
+混淆
+# Gson
+-keep class com.google.gson.stream.** { *; }
+
+# Glide
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+
+# OkHttp3
+-dontwarn okhttp3.**
+-keep class okhttp3.** { *;}
+
+# Okio
+-dontwarn okio.**
+-keep public class okio.** { *; }

@@ -1,0 +1,9 @@
+加载PDF
+依赖 mupdf
+com.artifex.mupdf.fitz  核心代码
+cssi.common.pdf.mini    简易加载，代码量较少
+cssi.common.pdf.viewer  添加动画等
+混淆添加
+-keep class com.artifex.mupdf.fitz.** {*;}
+
+

@@ -1,0 +1,6 @@
+<resources>
+    <string name="tips_not_wifi">当前使用的为移动网络,是否继续播放</string>
+    <string name="tips_not_wifi_confirm">继续</string>
+    <string name="tips_not_wifi_cancel">停止播放</string>
+    <string name="no_url">视频地址为空</string>
+</resources>

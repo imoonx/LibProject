@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_sdcard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ebebeb"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_path"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_40"
+        android:layout_marginBottom="@dimen/space_5"
+        android:background="@color/white"
+        android:elevation="@dimen/space_1"
+        android:ellipsize="middle"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/android_default_padding"
+        android:paddingRight="@dimen/android_default_padding"
+        android:singleLine="true"
+        android:textColor="@color/md_blue_grey_600"
+        android:textSize="@dimen/text_size_13" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rlv_sd_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/md_white_1000"
+            android:paddingLeft="@dimen/android_default_padding"
+            android:paddingRight="@dimen/android_default_padding" />
+
+        <com.imoonx.common.ui.EmptyLayout
+            android:id="@+id/error_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <include layout="@layout/file_select_bottom_layout" />
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PicturesPreviewer -->
+    <declare-styleable name="PicturesPreviewer">
+        <!-- 每行数量 -->
+        <attr name="picture_count" format="integer" />
+        <!-- 总数量 -->
+        <attr name="picture_max_size" format="integer" />
+        <!-- 图片 -->
+        <attr name="picture_def_id" format="reference" />
+
+        <attr name="is_need_picture" format="boolean" />
+    </declare-styleable>
+
+</resources>
