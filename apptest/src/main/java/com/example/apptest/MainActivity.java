@@ -3,12 +3,21 @@ package com.example.apptest;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.imoonx.common.base.ImageGalleryActivity;
+import com.imoonx.image.interf.SelectImageCallBack;
+import com.imoonx.image.ui.PicturesPreviewer;
 import com.imoonx.util.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-//        extends BaseActivity implements View.OnClickListener, PermissionCallbacks {
+import java.util.Map;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, SelectImageCallBack, PicturesPreviewer.OnPictureItemClickListener {
+
+    private PicturesPreviewer mPicturesPreviewer;
+
+//        extends BaseActivity implements View.OnClickListener,PermissionCallbacks {
 //
 //    private MenuViewItem east;
 //    private MenuViewItem west;
@@ -120,10 +129,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.showtoast).setOnClickListener(this);
+        mPicturesPreviewer = findViewById(R.id.evaluate_pp);
+        mPicturesPreviewer.setmSelectImageCallBack(this);
+        mPicturesPreviewer.setOnPictureItemClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         Toast.showToast("数据加载中，请稍后...");
+    }
+
+    @Override
+    public void doSelected(String[] images) {
+        mPicturesPreviewer.set(images);
+    }
+
+    @Override
+    public <T> void doSelected(Map<String, T> map) {
+    }
+
+    @Override
+    public void doEmpty(int imageCount) {
+    }
+
+    @Override
+    public void imageClick(RecyclerView recyclerView, int position, String[] images) {
+        ImageGalleryActivity.show(this, images, position, false);
     }
 }

@@ -341,12 +341,12 @@ public class FragmentTabHost extends TabHost implements OnTabChangeListener {
         if (TextUtils.isEmpty(tabId))
             return ft;
         TabInfo newTab = null;
-        XLog.e(FragmentTabHost.class, "tabId=" + tabId);
+        XLog.i(FragmentTabHost.class, "tabId=" + tabId);
         for (int i = 0; i < mTabs.size(); i++) {
             TabInfo tab = mTabs.get(i);
-            XLog.e(FragmentTabHost.class, "tag=" + tab.getTag());
+            XLog.i(FragmentTabHost.class, "tag=" + tab.getTag());
             if (TextUtils.equals(tabId, tab.getTag())) {
-                XLog.e(FragmentTabHost.class, "tabId=" + tabId);
+                XLog.i(FragmentTabHost.class, "tabId=" + tabId);
                 newTab = tab;
             }
         }
@@ -375,5 +375,4 @@ public class FragmentTabHost extends TabHost implements OnTabChangeListener {
         }
         return ft;
     }
-
 }

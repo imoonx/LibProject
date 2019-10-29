@@ -1,11 +1,11 @@
 include ':apptest'
 //include ':pdf'    //common
 //include ':time'   //common
-//include ':image'  //common
+include ':image'  //common
 //include ':file'   //common
 //include ':common' //util http
 //include ':third'  //util common
 //include ':video'  //util
 //include ':http'   //util
 //include ':zbar'   //util
-include ':util'
+//include ':util'

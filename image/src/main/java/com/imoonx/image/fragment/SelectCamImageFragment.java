@@ -322,9 +322,7 @@ public class SelectCamImageFragment extends BaseFragment implements SelectImageC
         public Loader<Cursor> onCreateLoader(int id, Bundle args) {
             if (id == 0) {
                 // 数据库光标加载器
-                XLog.e(SelectCamImageFragment.class, "123456789");
-                return new CursorLoader(getContext(),
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                return new CursorLoader(getContext(), MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
                         IMAGE_PROJECTION, null, null, IMAGE_PROJECTION[2] + " DESC");
             }
             return null;
@@ -423,7 +421,6 @@ public class SelectCamImageFragment extends BaseFragment implements SelectImageC
     @Override
     public void onPause() {
         super.onPause();
-
     }
 
     private void addImagesToAdapter(ArrayList<Image> images) {

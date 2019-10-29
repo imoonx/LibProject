@@ -38,5 +38,8 @@ dependencies {
 //    implementation "com.imoonx.android:http:$android_libImoonxVersion"
 //    implementation "com.imoonx.android:third:$android_libImoonxVersion"
 //    implementation "com.imoonx.android:pdf:$android_libImoonxVersion"
-    implementation project(':util')
+    implementation project(':image')
+    implementation "com.imoonx.android:common:$android_libImoonxVersion"
+    implementation "com.imoonx.android:util:$android_libImoonxVersion"
+    implementation "com.imoonx.android:http:$android_libImoonxVersion"
 }

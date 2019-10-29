@@ -33,7 +33,8 @@ uploadArchives {
             pom.project {
                 artifactId 'image'
                 groupId 'com.imoonx.android'
-                version android_libImoonxVersion
+//                version android_libImoonxVersion
+                version '29.0.1'
                 packaging 'aar'
             }
         }

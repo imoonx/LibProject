@@ -22,24 +22,22 @@ import java.util.Map;
 
 /**
  * @author 36238
- * @ClassName: TweetPicturesPreviewer
- * @Description: 提供图片预览/图片操作 返回选中图片等功能
- * @date 2016年12月28日 下午4:53:34
+ * TweetPicturesPreviewer
+ * 提供图片预览/图片操作 返回选中图片等功能
+ * 2016年12月28日 下午4:53:34
  */
 
-public class PicturesPreviewer extends RecyclerView implements SelectImageAdapter.Callback {
+public class PicturesPreviewer extends RecyclerView implements SelectImageAdapter.Callback, SelectImageAdapter.OnImageItemClickListener {
 
     private SelectImageAdapter mImageAdapter;
     private ItemTouchHelper mItemTouchHelper;
     private RequestManager mCurImageLoader;
-    private int mPictureId;
     private SelectImageCallBack mSelectImageCallBack;
 
     private static final int IMAGE_COW_COUNT = 3;
     private static final int IMAGE_MAX_SIZE = 9;
     private int mPictureMaxSize;
-    private int mPictureCount;
-    private boolean mIsNeedPicture;
+    private OnPictureItemClickListener mOnPictureItemClickListener;
 
     public SelectImageCallBack getmSelectImageCallBack() {
         return mSelectImageCallBack;
@@ -47,6 +45,14 @@ public class PicturesPreviewer extends RecyclerView implements SelectImageAdapte
 
     public void setmSelectImageCallBack(SelectImageCallBack mSelectImageCallBack) {
         this.mSelectImageCallBack = mSelectImageCallBack;
+    }
+
+    public OnPictureItemClickListener getOnPictureItemClickListener() {
+        return mOnPictureItemClickListener;
+    }
+
+    public void setOnPictureItemClickListener(OnPictureItemClickListener listener) {
+        this.mOnPictureItemClickListener = listener;
     }
 
     public PicturesPreviewer(Context context) {
@@ -68,25 +74,18 @@ public class PicturesPreviewer extends RecyclerView implements SelectImageAdapte
     private void init(Context context, @Nullable AttributeSet attrs, int defStyle) {
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.PicturesPreviewer, defStyle, 0);
-
-        mPictureCount = a.getInteger(R.styleable.PicturesPreviewer_picture_count, IMAGE_COW_COUNT);
-
+        int mPictureCount = a.getInteger(R.styleable.PicturesPreviewer_picture_count, IMAGE_COW_COUNT);
         mPictureMaxSize = a.getInteger(R.styleable.PicturesPreviewer_picture_max_size, IMAGE_MAX_SIZE);
-
-        mPictureId = a.getResourceId(R.styleable.PicturesPreviewer_picture_def_id, R.drawable.image_ic_add);
-
-        mIsNeedPicture = a.getBoolean(R.styleable.PicturesPreviewer_is_need_picture, true);
-
+        int mPictureId = a.getResourceId(R.styleable.PicturesPreviewer_picture_def_id, R.drawable.image_ic_add);
+        boolean mIsNeedPicture = a.getBoolean(R.styleable.PicturesPreviewer_is_need_picture, true);
         a.recycle();
 
-        mImageAdapter = new SelectImageAdapter(this, mPictureMaxSize, mPictureId, mIsNeedPicture);
+        mImageAdapter = new SelectImageAdapter(this, mPictureMaxSize, mPictureId, mIsNeedPicture, this);
 
         GridLayoutManager layoutManager = new GridLayoutManager(getContext(), mPictureCount);
-
         this.setLayoutManager(layoutManager);
         this.setAdapter(mImageAdapter);
         this.setOverScrollMode(View.OVER_SCROLL_NEVER);
-
         ItemTouchHelper.Callback callback = new PicturesPreviewerItemTouchCallback(mImageAdapter);
         mItemTouchHelper = new ItemTouchHelper(callback);
         mItemTouchHelper.attachToRecyclerView(this);
@@ -111,36 +110,31 @@ public class PicturesPreviewer extends RecyclerView implements SelectImageAdapte
 
     @Override
     public void onLoadMoreClick() {
-
         if (mSelectImageCallBack == null) {
-            SelectImageActivity.show(
-                    getContext(),
-                    new SelectOptions.Builder().setHasCam(true)
-                            .setSelectCount(mPictureMaxSize)
-                            .setSelectedImages(mImageAdapter.getPaths())
-                            .setCallback(new SelectImageCallBack() {
-                                @Override
-                                public void doSelected(String[] images) {
-                                    set(images);
-                                }
+            SelectImageActivity.show(getContext(), new SelectOptions.Builder().setHasCam(true)
+                    .setSelectCount(mPictureMaxSize)
+                    .setSelectedImages(mImageAdapter.getPaths())
+                    .setCallback(new SelectImageCallBack() {
+                        @Override
+                        public void doSelected(String[] images) {
+                            set(images);
+                        }
 
-                                @Override
-                                public <T> void doSelected(Map<String, T> map) {
+                        @Override
+                        public <T> void doSelected(Map<String, T> map) {
 
-                                }
+                        }
 
-                                @Override
-                                public void doEmpty(int isImage) {
+                        @Override
+                        public void doEmpty(int isImage) {
 
-                                }
-                            }).build());
+                        }
+                    }).build());
         } else {
-            SelectImageActivity.show(
-                    getContext(),
-                    new SelectOptions.Builder().setHasCam(true)
-                            .setSelectCount(mPictureMaxSize)
-                            .setSelectedImages(mImageAdapter.getPaths())
-                            .setCallback(mSelectImageCallBack).build());
+            SelectImageActivity.show(getContext(), new SelectOptions.Builder().setHasCam(true)
+                    .setSelectCount(mPictureMaxSize)
+                    .setSelectedImages(mImageAdapter.getPaths())
+                    .setCallback(mSelectImageCallBack).build());
         }
 
     }
@@ -173,4 +167,17 @@ public class PicturesPreviewer extends RecyclerView implements SelectImageAdapte
             mSelectImageCallBack.doEmpty(count);
         }
     }
+
+    @Override
+    public void imageClick(View view) {
+        if (null != view && null != mOnPictureItemClickListener) {
+            int position = getChildAdapterPosition(view);
+            mOnPictureItemClickListener.imageClick(this, position, getPaths());
+        }
+    }
+
+    public interface OnPictureItemClickListener {
+        void imageClick(RecyclerView recyclerView, int position, String[] images);
+    }
+
 }

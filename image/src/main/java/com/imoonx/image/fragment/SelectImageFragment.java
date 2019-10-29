@@ -15,7 +15,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -321,9 +320,7 @@ public class SelectImageFragment extends BaseFragment implements SelectImageCont
         public Loader<Cursor> onCreateLoader(int id, Bundle args) {
             if (id == 0) {
                 // 数据库光标加载器
-                Log.e("SelectIna", "123456789");
-                return new CursorLoader(getContext(),
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                return new CursorLoader(getContext(), MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
                         IMAGE_PROJECTION, null, null, IMAGE_PROJECTION[2]
                         + " DESC");
             }

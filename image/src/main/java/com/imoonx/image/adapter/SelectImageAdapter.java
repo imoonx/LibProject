@@ -31,13 +31,26 @@ public class SelectImageAdapter extends RecyclerView.Adapter<SelectImageAdapter.
     private Callback mCallback;
     private static int mPictureId;
     private static boolean mIsNeedPicture;
-    public boolean isNotDelete;
+    private boolean isNotDelete;
+    private OnImageItemClickListener mImageClickListener;
 
-    public SelectImageAdapter(Callback callback, int pictureMaxSize, int pictureId, boolean isNeedPicture) {
+    public interface OnImageItemClickListener {
+        void imageClick(View view);
+    }
+
+//    public SelectImageAdapter(Callback callback, int pictureMaxSize, int pictureId, boolean isNeedPicture) {
+//        mCallback = callback;
+//        MAX_SIZE = pictureMaxSize;
+//        mPictureId = pictureId;
+//        mIsNeedPicture = isNeedPicture;
+//    }
+
+    public SelectImageAdapter(Callback callback, int pictureMaxSize, int pictureId, boolean isNeedPicture, OnImageItemClickListener listener) {
         mCallback = callback;
         MAX_SIZE = pictureMaxSize;
         mPictureId = pictureId;
         mIsNeedPicture = isNeedPicture;
+        mImageClickListener = listener;
     }
 
     @Override
@@ -74,6 +87,12 @@ public class SelectImageAdapter extends RecyclerView.Adapter<SelectImageAdapter.
         if (viewType == TYPE_NONE) {
             return new TweetSelectImageHolder(view, new TweetSelectImageHolder.HolderListener() {
                 @Override
+                public void onImageClick(View view) {
+                    if (null != mImageClickListener)
+                        mImageClickListener.imageClick(view);
+                }
+
+                @Override
                 public void onDelete(Model model) {
                     Callback callback = mCallback;
                     if (callback != null) {
@@ -92,7 +111,6 @@ public class SelectImageAdapter extends RecyclerView.Adapter<SelectImageAdapter.
                         if (mCallback != null) {
                             mCallback.onEmpty(mModels.size());
                         }
-
                     }
                 }
 
@@ -235,7 +253,7 @@ public class SelectImageAdapter extends RecyclerView.Adapter<SelectImageAdapter.
         private ImageView mGifMask;
         private HolderListener mListener;
 
-        private TweetSelectImageHolder(View itemView, HolderListener listener, boolean isNotDelete) {
+        private TweetSelectImageHolder(final View itemView, HolderListener listener, boolean isNotDelete) {
             super(itemView);
             mListener = listener;
             mImage = itemView.findViewById(R.id.iv_content);
@@ -258,6 +276,17 @@ public class SelectImageAdapter extends RecyclerView.Adapter<SelectImageAdapter.
                     }
                 });
             }
+
+            //新加
+            mImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    final HolderListener holderListener = mListener;
+                    if (holderListener != null) {
+                        holderListener.onImageClick(itemView);
+                    }
+                }
+            });
 
             mImage.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
@@ -319,6 +348,9 @@ public class SelectImageAdapter extends RecyclerView.Adapter<SelectImageAdapter.
          * Holder 与Adapter之间的桥梁
          */
         interface HolderListener {
+
+            void onImageClick(View view);
+
             void onDelete(Model model);
 
             void onDrag(TweetSelectImageHolder holder);

@@ -72,8 +72,7 @@ public class LinePagerIndicator extends View implements PagerIndicator {
             setCurrentItem(count - 1);
             return;
         }
-        XLog.e(LinePagerIndicator.class, "count=" + count);
-        XLog.e(LinePagerIndicator.class, "width=" + getWidth());
+        XLog.i(LinePagerIndicator.class, "count=" + count + "****width=" + getWidth());
 
         float startX = (getWidth() - mIndicatorWidth * count - mIndicatorSpace - (count - 1)) / 2;
         float endX;
