@@ -16,8 +16,14 @@ allprojects {
     repositories {
         jcenter()
         google()
+//        maven {
+//            url "https://raw.githubusercontent.com/imoonx/repository/master"
+//        }
+//        maven {
+//            url "${file(getProperty('maven.url')).absolutePath}"
+//        }
         maven {
-            url "https://raw.githubusercontent.com/imoonx/repository/master"
+            url NEXUS_REPOSITORY_URL
         }
     }
 }

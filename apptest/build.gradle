@@ -31,15 +31,9 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$android_libSdkVersion"
     implementation "com.android.support:design:$android_libSdkVersion"
     implementation "com.android.support:support-v4:$android_libSdkVersion"
-//    implementation project(':common')
-//    implementation project(':pdf')
-//    implementation "com.imoonx.android:common:$android_libImoonxVersion"
-//    implementation "com.imoonx.android:util:$android_libImoonxVersion"
-//    implementation "com.imoonx.android:http:$android_libImoonxVersion"
-//    implementation "com.imoonx.android:third:$android_libImoonxVersion"
-//    implementation "com.imoonx.android:pdf:$android_libImoonxVersion"
-    implementation project(':image')
     implementation "com.imoonx.android:common:$android_libImoonxVersion"
     implementation "com.imoonx.android:util:$android_libImoonxVersion"
     implementation "com.imoonx.android:http:$android_libImoonxVersion"
+    implementation "com.imoonx.android:time:$android_libImoonxVersion"
+//    implementation project(':http')
 }

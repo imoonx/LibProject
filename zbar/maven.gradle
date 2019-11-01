@@ -28,13 +28,12 @@ artifacts {
 uploadArchives {
     repositories {
         mavenDeployer {
-//            repository(url: "http://10.1.2.180:8086/nexus/content/repositories/Android/") {
-//                def mavenDirPath = file(getProperty('maven.url'))
-//                repository(url: "file://${mavenDirPath.absolutePath}") // 必须双引号，单引号不会转义$
-////                authentication(userName: "admin", password: "admin123")
-//            }
-            def mavenDirPath = file(getProperty('maven.url'))
-            repository(url: "file://${mavenDirPath.absolutePath}")
+//            def mavenDirPath = file(getProperty('maven.url'))
+//            repository(url: "file://${mavenDirPath.absolutePath}")
+            //nexus
+            repository(url: NEXUS_REPOSITORY_URL) {
+                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+            }
             pom.project {
                 artifactId 'zbar'
                 groupId 'com.imoonx.android'

@@ -11,14 +11,14 @@
         android:layout_height="wrap_content"
         android:text="showToast" />
 
-    <com.imoonx.image.ui.PicturesPreviewer
-        android:id="@+id/evaluate_pp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/space_5"
-        app:is_need_picture="true"
-        app:picture_count="5"
-        app:picture_max_size="5" />
+<!--    <com.imoonx.image.ui.PicturesPreviewer-->
+<!--        android:id="@+id/evaluate_pp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="@dimen/space_5"-->
+<!--        app:is_need_picture="true"-->
+<!--        app:picture_count="5"-->
+<!--        app:picture_max_size="5" />-->
 
     <!--<FrameLayout-->
     <!--android:layout_width="match_parent"-->

@@ -1,23 +1,31 @@
 package com.example.apptest;
 
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.imoonx.common.base.ImageGalleryActivity;
-import com.imoonx.image.interf.SelectImageCallBack;
-import com.imoonx.image.ui.PicturesPreviewer;
-import com.imoonx.util.Toast;
+import com.imoonx.common.permissions.EasyPermissions;
+import com.imoonx.common.permissions.PermissionCallbacks;
+import com.imoonx.http.builder.GetBuilder;
+import com.imoonx.http.callback.FileCallBack;
+import com.imoonx.http.request.RequestCall;
+import com.imoonx.util.XLog;
 
-import java.util.Map;
+import java.io.File;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, SelectImageCallBack, PicturesPreviewer.OnPictureItemClickListener {
+import okhttp3.Call;
 
-    private PicturesPreviewer mPicturesPreviewer;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, PermissionCallbacks
+//        , SelectImageCallBack, PicturesPreviewer.OnPictureItemClickListener
+{
 
-//        extends BaseActivity implements View.OnClickListener,PermissionCallbacks {
+//    private PicturesPreviewer mPicturesPreviewer;
+
+    //        extends BaseActivity implements View.OnClickListener,PermissionCallbacks {
 //
 //    private MenuViewItem east;
 //    private MenuViewItem west;
@@ -108,52 +116,77 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        }
 //    }
 //
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
-//    }
-//
-//    @Override
-//    public void onPermissionsGranted(int requestCode, List<String> perms) {
-//
-//    }
-//
-//    @Override
-//    public void onPermissionsDenied(int requestCode, List<String> perms) {
-//
-//    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+
+    }
+
+    public static String NAV_FILE_PATH = Environment.getExternalStorageDirectory() + File.separator + "CSSI" + File.separator + "PDF" + File.separator;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.showtoast).setOnClickListener(this);
-        mPicturesPreviewer = findViewById(R.id.evaluate_pp);
-        mPicturesPreviewer.setmSelectImageCallBack(this);
-        mPicturesPreviewer.setOnPictureItemClickListener(this);
+//        mPicturesPreviewer = findViewById(R.id.evaluate_pp);
+//        mPicturesPreviewer.setmSelectImageCallBack(this);
+//        mPicturesPreviewer.setOnPictureItemClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        Toast.showToast("数据加载中，请稍后...");
+//        Toast.showToast("数据加载中，请稍后...");
+        downFile();
     }
 
-    @Override
-    public void doSelected(String[] images) {
-        mPicturesPreviewer.set(images);
-    }
+    private void downFile() {
+        GetBuilder builder = new GetBuilder();
+        builder.url("http://www.gov.cn/zhengce/pdfFile/2019_PDF.pdf");
+        RequestCall build = builder.build();
+        build.execute(new FileCallBack(NAV_FILE_PATH, "123.pdf") {
+            @Override
+            public void progress(float progress) {
+            }
 
-    @Override
-    public <T> void doSelected(Map<String, T> map) {
-    }
+            @Override
+            public void onError(Call call, Exception e) {
+                XLog.e(MainActivity.class, e);
+            }
 
-    @Override
-    public void doEmpty(int imageCount) {
+            @Override
+            public void onResponse(File response) {
+                XLog.e(MainActivity.class, "下载完成");
+            }
+        });
     }
+//}
 
-    @Override
-    public void imageClick(RecyclerView recyclerView, int position, String[] images) {
-        ImageGalleryActivity.show(this, images, position, false);
-    }
+//    @Override
+//    public void doSelected(String[] images) {
+//        mPicturesPreviewer.set(images);
+//    }
+//
+//    @Override
+//    public <T> void doSelected(Map<String, T> map) {
+//    }
+//
+//    @Override
+//    public void doEmpty(int imageCount) {
+//    }
+//
+//    @Override
+//    public void imageClick(RecyclerView recyclerView, int position, String[] images) {
+//        ImageGalleryActivity.show(this, images, position, false);
+//    }
 }

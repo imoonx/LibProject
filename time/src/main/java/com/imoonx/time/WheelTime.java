@@ -80,7 +80,8 @@ public class WheelTime {
         wv_hour = view.findViewById(R.id.hour);
         wv_hour.setAdapter(new NumScrollTimeAdapter(0, 23, "%02d"));
         wv_hour.setLabel(Res.getString(R.string.pickerview_hours));
-        wv_hour.setCurrentItem(hour - 1);
+//        wv_hour.setCurrentItem(hour - 1);
+        wv_hour.setCurrentItem(hour);
         //分
         wv_minute = view.findViewById(R.id.minute);
         wv_minute.setAdapter(new NumScrollTimeAdapter(1, 60, "%02d"));

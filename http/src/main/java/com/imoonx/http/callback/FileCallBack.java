@@ -51,6 +51,9 @@ public abstract class FileCallBack extends Callback<File> {
                 dir.mkdirs();
             }
             File file = new File(dir, destFileName);
+//            String filePath = destFileDir + destFileName;
+//            XLog.e(FileCallBack.class, "filePath=" + filePath);
+//            File file = new File(filePath);
             fos = new FileOutputStream(file);
             while ((len = is.read(buf)) != -1) {
                 sum += len;

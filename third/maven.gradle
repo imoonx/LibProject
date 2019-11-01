@@ -43,8 +43,11 @@ uploadArchives {
 //    }
     repositories {
         mavenDeployer {
-            def mavenDirPath = file(getProperty('maven.url'))
-            repository(url: "file://${mavenDirPath.absolutePath}")
+//            def mavenDirPath = file(getProperty('maven.url'))
+//            repository(url: "file://${mavenDirPath.absolutePath}")
+            repository(url: NEXUS_REPOSITORY_URL) {
+                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+            }
             pom.project {
                 artifactId 'third'
                 groupId 'com.imoonx.android'

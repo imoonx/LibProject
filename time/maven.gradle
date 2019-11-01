@@ -28,12 +28,17 @@ artifacts {
 uploadArchives {
     repositories {
         mavenDeployer {
-            def mavenDirPath = file(getProperty('maven.url'))
-            repository(url: "file://${mavenDirPath.absolutePath}")
+//            def mavenDirPath = file(getProperty('maven.url'))
+//            repository(url: "file://${mavenDirPath.absolutePath}")
+            //nexus
+            repository(url: NEXUS_REPOSITORY_URL) {
+                authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
+            }
             pom.project {
                 artifactId 'time'
                 groupId 'com.imoonx.android'
-                version android_libImoonxVersion
+//                version android_libImoonxVersion
+                version '29.0.1'
                 packaging 'aar'
             }
         }
